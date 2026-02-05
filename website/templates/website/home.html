@@ -1,0 +1,99 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Главная - Мой сайт-визитка{% endblock %}
+
+{% block site_title %}Моё портфолио{% endblock %}
+
+{% block content %}
+<!-- Герой секция -->
+ <section class="hero card">
+    <div style="text-align: center;">
+        <h2>Добро пожаловать на мой сайт-визитку!</h2>
+        <p style="font size: 1.2rem; margin: 20px 0; color: #151619;">
+            Я начинающий веб-разработчик, специализирующийся на Python и Django.
+            Здесь вы найдёте информацию обо мне, моих проектах и навыках.
+        </p>
+    </div>
+</section>
+
+<!-- Обо мне кратко -->
+ <section class="card">
+    <h2>Коротко обо мне</h2>
+    <div style="display: flex; align-items: center; gap: 30px;">
+        <div style="flex: 1;">
+            <h3>Кто я?</h3>
+            <p style="font size: 1.2rem; margin: 20px 0; color: #151619;">
+                Привет! Меня зовут Леонардо. Я увлечённый разработчик, который недавно начал свой путь в веб-разработке.</p>
+            <h3>Мои цели</h3>
+            <p style="font size: 1.2rem; margin: 20px 0; color: #151619;">
+                Создавать качественные и удобные веб-приложения, постоянно изучать новые технологии и развиваться как профессионал.</p>
+            <h3>Мой подход</h3>
+            <p style="font size: 1.2rem; margin: 20px 0; color: #151619;">
+                Я верю в чистый, поддерживаемый код и постоянное обучение. Каждый проект для меня - это возможность стать лучше.</p>
+        </div>
+        <div style="flex: 1; text-align: center;">
+            <div style="width: 250px; height: 250px; overflow: hidden;
+            border-radius: 50%; margin: 0 auto; border: 4px solid white; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+        <img src="{% static 'website/images/my_photo.jpg' %}"
+        alt="Моё фото"
+        style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+</section>
+
+<!-- Мои навыки -->
+ <section class="card">
+    <h2>Мои навыки</h2>
+    <div style="display: grid; grid-template-colums: repeat(auto-fit, minmax(250px. 1fr)); gap: 20px;">
+        <div style="background: linear-gradient(135deg, #0a190d 0%, #b1f183 100%); padding: 20px; border-radius: 8px;">
+            <h4>Phyton & Django</h4>
+            <p style="font size: 1.2rem; margin: 20px 0; color: #f8f8fa;">
+                Разработка бэкенда, работа с базами данных, создание REST API</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #0a190d 0%, #b1f183 100%); padding: 20px; border-radius: 8px;">
+            <h4>Frontend основы</h4>
+            <p style="font size: 1.2rem; margin: 20px 0; color: #f8f8fa;">
+                HTML5, CSS3, JavaScript, адаптивная вёрстка</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #0a190d 0%, #b1f183 100%); padding: 20px; border-radius: 8px;">
+            <h4>Инструменты</h4>
+            <p style="font size: 1.2rem; margin: 20px 0; color: #f8f8fa;">
+                Git, VS Code, Linux, Docker (Основы)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Последние проекты -->
+ <section class="card">
+    <h2>Последние проекты</h2>
+    <div style="display: grid; grid-temlate-colums: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px">
+        <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+            <div style="background: linear-gradient(135deg, #0a190d 0%, #b1f183 100%); padding: 15px; color: white;">
+                <h4 style="margin: 0;">Сайт-визитка на Django</h4>
+            </div>
+            <div style="padding: 20px;">
+                <p>Текущий проект, который вы сейчас просматриваете.</p>
+                <p style="margin-top: 10px;"><strong>Технологии:</strong>Django, HTML, CSS</p>
+            </div>
+        </div>
+
+        <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+            <div style="background: linear-gradient(135deg, #0a190d 0%, #b1f183 100%); padding: 15px; color: white;">
+                <h4 style="margin: 0;">Консольные утилиты</h4>
+            </div>
+            <div style="padding: 20px;">
+                <p>Несколько полезных скриптов на Phyton для автоматизации задач</p>
+                <p style="margin-top: 10px;"><strong>Технологии:</strong>Phyton, argparse</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Призыв к действию -->
+ <section class="card" style="text-align: center; background: linear-gradient(135deg, #0a190d 0%, #b1f183 100%); color: white;">
+    <h2 style="color: white;">Готовы к сотрудничеству?</h2>
+    <p style="font-size: 1.2rem; margin: 20px 0;">Ищу интересные проекты и возможности для роста. Давайте создадим что-то удивительное вместе!</p>
+    <a href="{% url 'contact' %}" class="btn" style="background: white; color: #060606;">Связаться со мной</a>
+ </section>
+
+ {% endblock %}

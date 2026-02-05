@@ -1,0 +1,75 @@
+# ==================== PYTHON ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ==================== ВИРТУАЛЬНОЕ ОКРУЖЕНИЕ ====================
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+python_env/
+
+# ==================== DJANGO ====================
+# База данных
+*.sqlite3
+*.sqlite3-journal
+
+# Секретные настройки
+.env
+.env.local
+.env.*.local
+local_settings.py
+
+# Собранные статические файлы (при collectstatic)
+staticfiles/
+
+# Медиа файлы (загружаемые пользователями)
+media/
+
+# Логи
+*.log
+logs/
+
+# ==================== IDE и РЕДАКТОРЫ ====================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+*.iws
+
+# ==================== СИСТЕМНЫЕ ФАЙЛЫ ====================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==================== ВРЕМЕННЫЕ ФАЙЛЫ ====================
+*.tmp
+*.temp
+*~
+*.bak
+*.backup
+
+# ==================== ПРОЧЕЕ ====================
+# Коэффициент покрытия тестами
+.coverage
+htmlcov/
+
+# pipenv
+Pipfile.lock
+
+# pyenv
+.python-version

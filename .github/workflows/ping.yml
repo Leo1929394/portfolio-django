@@ -1,0 +1,23 @@
+name: Keep Render Site Alive
+
+on:
+  schedule:
+    # Запускать каждые 5 минут
+    - cron: '*/5 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping portfolio site
+        run: |
+          echo "Pinging Render site at $(date)"
+          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://portfolio-django-53im.onrender.com)
+          echo "HTTP Status Code: $STATUS_CODE"
+
+          if [ "$STATUS_CODE" -eq 200 ]; then
+            echo "✅ Site is UP and responding"
+          else
+            echo "❌ Site returned code: $STATUS_CODE"
+            exit 1  # Помечаем как failed
+          fi
